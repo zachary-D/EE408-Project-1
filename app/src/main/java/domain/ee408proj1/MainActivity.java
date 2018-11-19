@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Description;
     private TextView Score;
     private Button startQuiz;
+    score lastScore;
 
 
     @Override
@@ -35,17 +36,29 @@ public class MainActivity extends AppCompatActivity {
 
         startQuiz = (Button) findViewById(R.id.startQuiz);
 
+        View.OnClickListener sQListen = new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                fn_startQuiz(v);
+            }
+
+        };
+
+        startQuiz.setOnClickListener(sQListen);
+
         Description = (TextView) findViewById(R.id.Description);
         Score = (TextView) findViewById(R.id.Score);
 
 
-        Score.setText("Score: ");
+        Score.setText("Score: " + scoreboard.getLastScore().correct + "/" + scoreboard.getLastScore().total);
 
 
 
         }
 
-    public void startQuiz( View v ) {
+    public void fn_startQuiz( View v ) {
         Intent myIntent = new Intent( this, QuestionActivity.class );
         this.startActivity( myIntent );
     }

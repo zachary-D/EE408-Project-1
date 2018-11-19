@@ -71,8 +71,10 @@ public class QuestionActivity extends AppCompatActivity {
 
            else if (switchButton == 1)  //NEXT button
            {
-               if(myQuiz.getCurrentIndex() + 1 == myQuiz.getNumQuestions())
+               if (myQuiz.getCurrentIndex() + 1 == myQuiz.getNumQuestions()) {
+                   myQuiz.closeQuiz();
                    leaveActivity();
+               }
                else {
                    normColor();
                    radioGroup.clearCheck();
