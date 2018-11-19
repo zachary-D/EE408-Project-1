@@ -54,13 +54,18 @@ public class QuestionActivity extends AppCompatActivity {
        if(radioGroup.getCheckedRadioButtonId()!= -1) { //checks to see if a radio button is checked
            if (switchButton == 0)  //SUBMIT button
            {
-               int tmp = radioGroup.getCheckedRadioButtonId();
+               int index;
+               //Identify the index of the checked button
+               for(index = 0; index < 4; index++) {
+                   if(radioGroup.getCheckedRadioButtonId() == radioGroup.getChildAt(index).getId()) break;
+               }
+
 
                //findViewById((radioGroup.getCheckedRadioButtonId())).
 
                //String radioText = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
 
-              // myQuiz.getCurrent().check()
+               boolean isCorrect = myQuiz.getCurrent().check(index);
 
                //rgColor();
                showScore.setText("Score: \n" + score + "/" + qNum);
