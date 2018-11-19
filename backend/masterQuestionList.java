@@ -15,13 +15,7 @@ public static class masterQuestionList
 				ans[j] = String("Ans").concat(Integer.toString(j)).concat("for q").concat(Integer.toString(i));
 			}
 			
-			question a(
-				String("question").concat(Integer.toString(i)),
-				ans,
-				i%4;
-			);
-			
-			questions[i] = a;
+			questions[i] = question( String("question").concat(Integer.toString(i)), ans, i%4);
 		}
 	}
 	
