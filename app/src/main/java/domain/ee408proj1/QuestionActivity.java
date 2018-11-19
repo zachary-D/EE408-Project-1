@@ -18,8 +18,6 @@ public class QuestionActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton c1, c2, c3, c4;
     private Button quit, action;
-    private int score;
-    private int qNum;
     private int switchButton;
 
     quiz myQuiz;
@@ -40,9 +38,11 @@ public class QuestionActivity extends AppCompatActivity {
         action = (Button)findViewById(R.id.action);
         switchButton = 0;
 
-        action.setText("Submit");
-        showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getCurrentIndex());
         myQuiz = new quiz (4);
+
+        action.setText("Submit");
+        showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + (myQuiz.getCurrentIndex() + 1));
+
         addQuestion();
         normColor();
     }
@@ -61,24 +61,24 @@ public class QuestionActivity extends AppCompatActivity {
 
                //String radioText = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
 
-               boolean isCorrect = myQuiz.checkAnswer(index);
+               myQuiz.checkAnswer(index);
 
                //rgColor();
-               showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getCurrentIndex());
+               showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + (myQuiz.getCurrentIndex() + 1));
                switchButton = 1;
                action.setText("Next");
            }
 
            else if (switchButton == 1)  //NEXT button
            {
-               if(qNum == myQuiz.getNumQuestions())
+               if(myQuiz.getCurrentIndex() + 1 == myQuiz.getNumQuestions())
                    leaveActivity();
                else {
                    normColor();
                    radioGroup.clearCheck();
                    myQuiz.advanceQuestion();
                    addQuestion();
-                   showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getNumQuestions());
+                   showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + (myQuiz.getCurrentIndex() + 1));
                    switchButton = 0;
                    action.setText("Submit");
                }
@@ -88,7 +88,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void addQuestion() {
-        question.setText("Q" + qNum + ") " + myQuiz.getCurrent().getQuestion() );
+        question.setText("Q" + (myQuiz.getCurrentIndex() + 1) + ") " + myQuiz.getCurrent().getQuestion() );
         c1.setText(myQuiz.getCurrent().getAnswer(0));
         c2.setText(myQuiz.getCurrent().getAnswer(1));
         c3.setText(myQuiz.getCurrent().getAnswer(2));
