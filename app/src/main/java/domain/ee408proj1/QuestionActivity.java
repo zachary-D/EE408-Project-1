@@ -22,6 +22,8 @@ public class QuestionActivity extends AppCompatActivity {
     private int qNum;
     private int switchButton;
 
+    quiz myQuiz;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,18 +47,21 @@ public class QuestionActivity extends AppCompatActivity {
 
         //addQuestion();
         normColor();
-
+        myQuiz = new quiz (4);
     }
 
     public void actionButton( View v ) {
        if(radioGroup.getCheckedRadioButtonId()!= -1) { //checks to see if a radio button is checked
            if (switchButton == 0)  //SUBMIT button
            {
-               String radioText = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
-          /*  if(radioText.equals())
-              {
-                  score++;
-              }*/
+               int tmp = radioGroup.getCheckedRadioButtonId();
+
+               //findViewById((radioGroup.getCheckedRadioButtonId())).
+
+               //String radioText = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
+
+              // myQuiz.getCurrent().check()
+
                //rgColor();
                showScore.setText("Score: \n" + score + "/" + qNum);
                switchButton = 1;
@@ -82,11 +87,11 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void addQuestion() {
-        //question.setText("Q" + qNum + ") " + );
-        //c1.setText();
-        //c2.setText();
-        //c3.setText();
-        //c4.setText();
+        question.setText("Q" + qNum + ") " + myQuiz.getCurrent().getQuestion() );
+        c1.setText(myQuiz.getCurrent().getAnswer(0));
+        c2.setText(myQuiz.getCurrent().getAnswer(1));
+        c3.setText(myQuiz.getCurrent().getAnswer(2));
+        c4.setText(myQuiz.getCurrent().getAnswer(3));
     }
 
     public void normColor() { //turns choice background to normal color

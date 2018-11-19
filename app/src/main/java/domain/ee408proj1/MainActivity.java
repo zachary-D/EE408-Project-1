@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         masterQuestionList.loadQuestions();
         scoreboard.load();
-        quiz myQuiz = new quiz (4);
+
 
 
     }
