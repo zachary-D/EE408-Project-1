@@ -1,4 +1,4 @@
-class questionList
+public class questionList
 {
 	questionList()
 	{
@@ -8,18 +8,16 @@ class questionList
 	questionList(int _numQuestions, question[] _questions)
 	{
 		numQuestions = _numQuestions;
-		questions = new questions[numQuestions];
-		for(int i = 0; i < numQuestions; ++)
+		questions = new question[numQuestions];
+		for(int i = 0; i < numQuestions; i++)
 		{
 			questions[i] = _questions[i];
 		}
 	}
 	
-private:
-	question[] questions;
-	int numQuestions;
+	private question[] questions;
+	private int numQuestions;
 	
-public:
 	question getQuestion(int index)
 	{
 		//TODO: Input validation for 0 <= index < numQuestions

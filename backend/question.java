@@ -1,6 +1,5 @@
-class question
+public class question
 {
-public:
 	question()
 	{
 		answers = new String[4];
@@ -18,12 +17,10 @@ public:
 		correctAnswer = _correctAnswer;
 	}
 	
-private:
-	String question;
-	String[] answers;
-	int correctAnswer;
+	private String question;
+	private String[] answers;
+	private int correctAnswer;
 	
-public:
 	String getQuestion()
 	{
 		return question;
