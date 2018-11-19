@@ -1,0 +1,34 @@
+
+
+Desc: The core of the quiz backend.  Stores the questions of a quiz, checks the answers and handles advancing the quiz.
+(Only the publicly available 'interface' is shown below)
+
+class quiz
+{
+	//Returns a copy of the current question.  This is where you get the prompt and the answers.
+	question getCurrent();
+	
+	//Advances to the next question in the quiz
+	void advanceQuestion();
+	
+	//Returns the percentage grade for the quiz
+	double getGrade();
+	
+	//Adds the current score to the scoreboard, and does some cleanup (deallocates arrays, etc.)
+	void closeQuiz();
+};
+
+class question
+{
+	//Gets the prompt for the current question
+	String getQuestion();
+	
+	//Gets the 'index'th answer. (index valid from 0->3, inclusive)
+	String getAnswer(int index);
+	
+	//Checks if the 'index'th answer is the correct answer
+	boolean check(int index);
+	
+	//Shuffles the answers around
+	void shuffle();	
+}

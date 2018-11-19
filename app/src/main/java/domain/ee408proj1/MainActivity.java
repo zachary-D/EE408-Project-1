@@ -12,6 +12,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        masterQuestionList.loadQuestions();
+        scoreboard.load();
+        quiz myQuiz = new quiz (4);
+
+
     }
 
     public void change( View v ) {
