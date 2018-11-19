@@ -51,10 +51,11 @@ public class quiz
 	}
 
 	
-	double getGrade()
+	int getNumRight()
 	{
-		return numCorrect/totalQuestions;
+		return numCorrect;
 	}
+	int getNumQuestions() { return totalQuestions; }
 
 
 	
