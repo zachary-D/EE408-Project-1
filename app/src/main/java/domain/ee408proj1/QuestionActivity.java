@@ -38,12 +38,10 @@ public class QuestionActivity extends AppCompatActivity {
         c4 = (RadioButton)findViewById(R.id.choice4);
         quit = (Button)findViewById(R.id.quit);
         action = (Button)findViewById(R.id.action);
-        score = 0;
-        qNum = 1;
         switchButton = 0;
 
         action.setText("Submit");
-        showScore.setText("Score: \n" +score + "/" + qNum);
+        showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getCurrentIndex());
         myQuiz = new quiz (4);
         addQuestion();
         normColor();
@@ -63,21 +61,22 @@ public class QuestionActivity extends AppCompatActivity {
 
                //String radioText = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
 
-               boolean isCorrect = myQuiz.getCurrent().check(index);
+               boolean isCorrect = myQuiz.checkAnswer(index);
 
                //rgColor();
-               showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getNumQuestions());
+               showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getCurrentIndex());
                switchButton = 1;
                action.setText("Next");
            }
 
            else if (switchButton == 1)  //NEXT button
            {
-               if(qNum == 10)
+               if(qNum == myQuiz.getNumQuestions())
                    leaveActivity();
                else {
                    normColor();
                    radioGroup.clearCheck();
+                   myQuiz.advanceQuestion();
                    addQuestion();
                    showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getNumQuestions());
                    switchButton = 0;
