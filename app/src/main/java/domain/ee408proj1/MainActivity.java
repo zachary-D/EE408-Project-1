@@ -51,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
         Description = (TextView) findViewById(R.id.Description);
         Score = (TextView) findViewById(R.id.Score);
 
+        updateScoreBoard();
 
-        Score.setText("Score: " + scoreboard.getLastScore().correct + "/" + scoreboard.getLastScore().total);
+
+
 
 
 
@@ -61,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
     public void fn_startQuiz( View v ) {
         Intent myIntent = new Intent( this, QuestionActivity.class );
         this.startActivity( myIntent );
+    }
+
+    public void updateScoreBoard() {
+        Score.setText("Score: " + scoreboard.getLastScore().correct + "/" + scoreboard.getLastScore().total);
     }
 }
 
