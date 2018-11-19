@@ -1,6 +1,8 @@
-public static class masterQuestionList
+package domain.ee408proj1;
+
+public class masterQuestionList
 {
-	void loadQuestions()
+	static void loadQuestions()
 	{
 		//TODO: Make an actual db read/write code, for now hard-code it for testing
 		totalQuestions = 5;
@@ -12,22 +14,22 @@ public static class masterQuestionList
 			String[] ans = new String[4];
 			for(int j = 0; j < 4; j++)
 			{
-				ans[j] = String("Ans").concat(Integer.toString(j)).concat("for q").concat(Integer.toString(i));
+				ans[j] = ("Ans").concat(Integer.toString(j)).concat("for q").concat(Integer.toString(i));
 			}
 			
-			questions[i] = question( String("question").concat(Integer.toString(i)), ans, i%4);
+			questions[i] = new question( ("question").concat(Integer.toString(i)), ans, i%4);
 		}
 	}
-	
-	
-	private question[] questions;
-	int totalQuestions;
+
+
+	static private question[] questions;
+	static private int totalQuestions;
 	
 	questionList getQuestionSet(int numQuestions)
 	{
 		//TODO: In the future, add support to pick a random start point in the list of questions to start so we don't always use the exact same questions over and over
 		
-		if(numQuestions > totalQuestions) throw Exception("Number of questions requested is greater than the total number available!");
+		//if(numQuestions > totalQuestions) throw Exception("Number of questions requested is greater than the total number available!");
 		
 		question[] newListEntries = new question[numQuestions];
 		
@@ -36,6 +38,6 @@ public static class masterQuestionList
 			newListEntries[i] = questions[i];
 		}
 		
-		return questionList(numQuestions, newListEntries);
+		return new questionList(numQuestions, newListEntries);
 	}
 };

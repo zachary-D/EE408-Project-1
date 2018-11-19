@@ -1,6 +1,7 @@
-class quiz
+package domain.ee408proj1;
+
+public class quiz
 {
-public:
 	quiz()
 	{
 		totalQuestions = 0;
@@ -10,28 +11,30 @@ public:
 	{
 		//TODO: Add checking to make sure that 'numQuestions' isn't greater that the maximum number of questions in masterQuestionList.java
 		totalQuestions = numQuestions;
-		
+
 		getFromMaster(totalQuestions);
-		
+
 		numCorrect = 0;
 		currentQuestion = 0;
 	}
-	
-private:
-	questionList questions;
-	int numCorrect;
-	int totalQuestions;
-	int currentQuestion;
-	
-	
-	void getFromMaster(int numQuestions)
+
+	private questionList questions;
+	private int numCorrect;
+	private int totalQuestions;
+	private int currentQuestion;
+
+
+	private void getFromMaster(int numQuestions)
 	{
-		
+
 	}
-	
-public:
-	
-	question getCurrent();
+
+
+	question getCurrent()
+	{
+		return questions.getQuestion(currentQuestion);
+	}
+
 	boolean checkAnswer(int answer)
 	{
 		if(getCurrent().check(answer))
@@ -39,15 +42,24 @@ public:
 			numCorrect++;
 			return true;
 		}
-		else return false;		
+		else return false;
 	}
+
+	void advanceQuestion()
+	{
+		currentQuestion++;
+	}
+
 	
-	void advanceQuestion();
-	
-	double getGrade();
+	double getGrade()
+	{
+		return numCorrect/totalQuestions;
+	}
+
+
 	
 	void closeQuiz()
 	{
-
+		//TODO
 	}
 }

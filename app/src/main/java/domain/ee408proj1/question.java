@@ -1,3 +1,5 @@
+package domain.ee408proj1;
+
 public class question
 {
 	question()
