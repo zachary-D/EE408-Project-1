@@ -41,20 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         Score.setText("Score: ");
 
-        View.OnClickListener lDo = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent myIntent = new Intent( this, QuestionActivity.class );
-                this.startActivity( myIntent );
-            }
-        };
 
-        startQuiz.setOnClickListener(lDo);
+        }
 
-    }
-
-    public void change( View v ) {
+    public void startQuiz( View v ) {
         Intent myIntent = new Intent( this, QuestionActivity.class );
         this.startActivity( myIntent );
     }
