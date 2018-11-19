@@ -44,10 +44,9 @@ public class QuestionActivity extends AppCompatActivity {
 
         action.setText("Submit");
         showScore.setText("Score: \n" +score + "/" + qNum);
-
-        //addQuestion();
-        normColor();
         myQuiz = new quiz (4);
+        addQuestion();
+        normColor();
     }
 
     public void actionButton( View v ) {
@@ -60,7 +59,6 @@ public class QuestionActivity extends AppCompatActivity {
                    if(radioGroup.getCheckedRadioButtonId() == radioGroup.getChildAt(index).getId()) break;
                }
 
-
                //findViewById((radioGroup.getCheckedRadioButtonId())).
 
                //String radioText = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
@@ -68,7 +66,7 @@ public class QuestionActivity extends AppCompatActivity {
                boolean isCorrect = myQuiz.getCurrent().check(index);
 
                //rgColor();
-               showScore.setText("Score: \n" + score + "/" + qNum);
+               showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getNumQuestions());
                switchButton = 1;
                action.setText("Next");
            }
@@ -81,8 +79,7 @@ public class QuestionActivity extends AppCompatActivity {
                    normColor();
                    radioGroup.clearCheck();
                    addQuestion();
-                   qNum++;
-                   showScore.setText("Score: \n" + score + "/" + qNum);
+                   showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + myQuiz.getNumQuestions());
                    switchButton = 0;
                    action.setText("Submit");
                }
