@@ -25,7 +25,7 @@ public class masterQuestionList
 	static private question[] questions;
 	static private int totalQuestions;
 	
-	questionList getQuestionSet(int numQuestions)
+	static questionList getQuestionSet(int numQuestions)
 	{
 		//TODO: In the future, add support to pick a random start point in the list of questions to start so we don't always use the exact same questions over and over
 		

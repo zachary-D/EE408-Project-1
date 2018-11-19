@@ -26,7 +26,7 @@ public class quiz
 
 	private void getFromMaster(int numQuestions)
 	{
-
+		questions = masterQuestionList.getQuestionSet(numQuestions);
 	}
 
 
@@ -60,6 +60,6 @@ public class quiz
 	
 	void closeQuiz()
 	{
-		//TODO
+		scoreboard.addScore(new score("tempname", numCorrect, totalQuestions));
 	}
 }
