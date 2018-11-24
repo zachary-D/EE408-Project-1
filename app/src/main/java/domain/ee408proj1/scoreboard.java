@@ -1,23 +1,27 @@
 package domain.ee408proj1;
 
+import java.util.ArrayList;
+
 class scoreboard {
-    static void load() {
+    static void load(databaseManager srcDB) {
+        db = srcDB;
         //TODO: implement lmao
 
-        numScores = 0;
-        if (numScores > 0) scores = new score[numScores];
+        scores = db.getScoreboard();
 
         lastScore = new score("", 0, 0);
     }
 
-
-    static private score[] scores;
-    static private int numScores;
+    static private int maxScoresKept = 10;
+    static private ArrayList<score> scores;
     static private score lastScore;
+    static private databaseManager db;
+
+    //TODO: Add a method to sort the board by highest score
 
     static score getScore(int index) {
         //TODO: Make sure we can't access an index greater than the last score
-        return scores[index];
+        return scores.get(index);
     }
 
     static score getLastScore() {
@@ -25,38 +29,28 @@ class scoreboard {
     }
 
     static void addScore(score newScore) {
-        score[] oldScores = new score[numScores];
-        oldScores = scores;
-
-        scores = new score[numScores + 1];
-
-        for (int i = 0; i < numScores; i++) {
-            scores[i] = oldScores[i];
-        }
-        scores[numScores] = newScore;
-        lastScore = newScore;
-        numScores++;
+        //If scores.size() >= maxScoresKept, drop the lowest score and add the new one.
+        scores.add(newScore);
     }
 
     static void reset() {
-        numScores = 0;
-        scores = null;
+        scores = new ArrayList<score>();
     }
 
     static int getNumScores()
     {
-        return numScores;
+        return scores.size();
     }
 
     static double getScoreAverage()
     {
         double sum = 0;
-        for(int i = 0; i < numScores; i++)
+        for(int i = 0; i < scores.size(); i++)
         {
-            sum += (scores[i].correct / scores[i].total);
+            sum += (scores.get(i).correct / scores.get(i).total);
         }
 
-        sum /= numScores;
+        sum /= scores.size();
 
         return sum;
     }

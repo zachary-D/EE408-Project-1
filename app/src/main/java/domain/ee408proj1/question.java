@@ -33,6 +33,11 @@ public class question
 		//TODO: Add input validation for 0<= index <= 3
 		return answers[index]; 
 	}
+
+	String getCorrectAnswer()
+	{
+		return answers[correctAnswer];
+	}
 	
 	void shuffle()
 	{
