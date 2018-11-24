@@ -50,11 +50,12 @@ public class quiz
 		currentQuestion++;
 	}
 
-	
-	double getGrade()
+	int getCurrentIndex() { return currentQuestion; }
+	int getNumRight()
 	{
-		return numCorrect/totalQuestions;
+		return numCorrect;
 	}
+	int getNumQuestions() { return totalQuestions; }
 
 
 	
