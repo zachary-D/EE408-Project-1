@@ -111,11 +111,11 @@ public class databaseManager extends SQLiteOpenHelper {
 
         while(cursor.moveToNext())
         {
-            String ans[] = new String[4];
+            ArrayList<String> ans = new ArrayList<String>();
 
             for(int i = 2; i < 6; i++)
             {
-                ans[i-2] = cursor.getString(i);
+                ans.add(cursor.getString(i));
             }
 
             questions.add( new question(cursor.getString(1), ans, 0));
