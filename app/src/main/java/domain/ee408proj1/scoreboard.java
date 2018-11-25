@@ -30,6 +30,7 @@ class scoreboard {
         //If scores.size() >= maxScoresKept, drop the lowest score and add the new one.
         scores.add(newScore);
         db.storeScoreboard(scores);
+        lastScore = newScore;
     }
 
     static void reset() {

@@ -27,6 +27,6 @@ public class masterQuestionList
 			qList.add(questions.get(i));
 		}
 		
-		return new questionList(questions);
+		return new questionList(qList);
 	}
 };
