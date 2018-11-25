@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView Description;
     private TextView Score;
     private Button startQuiz;
-    score lastScore;
 
     private databaseManager db;
 
@@ -58,11 +57,6 @@ public class MainActivity extends AppCompatActivity {
         Score = (TextView) findViewById(R.id.Score);
 
         updateScoreBoard();
-
-
-
-
-
 
         }
 

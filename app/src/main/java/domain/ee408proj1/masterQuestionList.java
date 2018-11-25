@@ -19,14 +19,14 @@ public class masterQuestionList
 		//TODO: In the future, add support to pick a random start point in the list of questions to start so we don't always use the exact same questions over and over
 		
 		//if(numQuestions > totalQuestions) throw Exception("Number of questions requested is greater than the total number available!");
-		
-		question[] newListEntries = new question[numQuestions];
-		
+
+        ArrayList<question> qList = new ArrayList<question>();
+
 		for(int i = 0; i < numQuestions; i++)
 		{
-			newListEntries[i] = questions.get(i);
+			qList.add(questions.get(i));
 		}
 		
-		return new questionList(numQuestions, newListEntries);
+		return new questionList(questions);
 	}
 };

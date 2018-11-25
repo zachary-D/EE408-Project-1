@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class databaseManager extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "appDB";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     //DB table headers for the 'questions' table
     private static final String TABLE_QU = "questions";
@@ -135,12 +135,25 @@ public class databaseManager extends SQLiteOpenHelper {
         while(cursor.moveToNext()) {
             scoreboard.add(
                     new score(
-                            cursor.getString(0),
-                            Integer.parseInt(cursor.getString(1)),
-                            Integer.parseInt(cursor.getString(2))
+                            cursor.getString(1),
+                            Integer.parseInt(cursor.getString(2)),
+                            Integer.parseInt(cursor.getString(3))
                    ));
         }
 
         return scoreboard;
+    }
+
+    public void storeScoreboard(ArrayList<score> scores)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("drop table if exists " + TABLE_sboard);
+        db.execSQL("create table " + TABLE_sboard + "( " + sboard_id + " integer primary key autoincrement, " + sboard_name + " text, " + sboard_corr + " integer, " + sboard_total + " text)");
+
+        for(int i = 0; i < scores.size(); i++)
+        {
+            db.execSQL("insert into " + TABLE_sboard + " values( null, '" + scores.get(i).name + "', " + scores.get(i).correct + ", " + scores.get(i).total + ")");
+        }
     }
 }
