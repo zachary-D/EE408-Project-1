@@ -5,8 +5,6 @@ import java.util.ArrayList;
 class scoreboard {
     static void load(databaseManager srcDB) {
         db = srcDB;
-        //TODO: implement lmao
-
         scores = db.getScoreboard();
 
         lastScore = new score("", 0, 0);
