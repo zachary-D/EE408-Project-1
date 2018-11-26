@@ -8,10 +8,11 @@ public class masterQuestionList
 	{
 		db = srcDB;
 
-		questions = db.getAllQuestions();
+		questions = new questionList(db.getAllQuestions());
+		questions.shuffle();
 	}
 
-	static private ArrayList<question> questions;
+	static private questionList questions;
 	static private databaseManager db;
 	
 	static questionList getQuestionSet(int numQuestions)
@@ -24,7 +25,7 @@ public class masterQuestionList
 
 		for(int i = 0; i < numQuestions; i++)
 		{
-			qList.add(questions.get(i));
+			qList.add(questions.getQuestion(i));
 		}
 		
 		return new questionList(qList);
