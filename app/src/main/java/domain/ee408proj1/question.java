@@ -51,11 +51,12 @@ public class question
 			answers.add(oldAns.get(pos));
 			oldAns.remove(pos);
 			//This moves the correct answer back so we don't loose its place
-			if(correctAnswer > pos && correctAnsSet == false) correctAnswer--;
-			else if(correctAnswer == pos)
-			{
-				correctAnswer = answers.size()-1;
-				correctAnsSet = true;
+			if(correctAnsSet == false) {
+				if (correctAnswer > pos) correctAnswer--;
+				else if (correctAnswer == pos) {
+					correctAnswer = answers.size() - 1;
+					correctAnsSet = true;
+				}
 			}
 		}
 	}

@@ -38,7 +38,7 @@ public class QuestionActivity extends AppCompatActivity {
         action = (Button)findViewById(R.id.action);
         switchButton = 0;
 
-        myQuiz = new quiz (20);
+        myQuiz = new quiz (10);
 
         action.setText("Submit");
         showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + (myQuiz.getCurrentIndex() + 1));
