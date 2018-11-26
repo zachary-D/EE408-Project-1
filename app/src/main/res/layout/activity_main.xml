@@ -45,7 +45,9 @@
             android:text="Start Quiz!"
             android:layout_marginLeft= "60dp"
             android:layout_marginBottom= "10dp"
-            android:id="@+id/startQuiz" />
+            android:textSize="10pt"
+            android:id="@+id/startQuiz"
+            android:gravity="center"/>
 
 
     </RelativeLayout>
