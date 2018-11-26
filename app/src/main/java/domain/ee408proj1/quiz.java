@@ -50,7 +50,7 @@ public class quiz
 		currentQuestion++;
 	}
 
-	
+	int getCurrentIndex() { return currentQuestion; }
 	int getNumRight()
 	{
 		return numCorrect;
