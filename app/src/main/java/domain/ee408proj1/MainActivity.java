@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
         masterQuestionList.loadQuestions();
         scoreboard.load();
 
-
-
     }
 
     public void change( View v ) {
