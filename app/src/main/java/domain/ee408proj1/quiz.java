@@ -16,6 +16,8 @@ public class quiz
 
 		numCorrect = 0;
 		currentQuestion = 0;
+
+		questions.shuffle();
 	}
 
 	private questionList questions;

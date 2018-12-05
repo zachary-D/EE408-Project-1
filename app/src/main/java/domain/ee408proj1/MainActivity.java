@@ -21,16 +21,21 @@ public class MainActivity extends AppCompatActivity {
     private TextView Description;
     private TextView Score;
     private Button startQuiz;
-    score lastScore;
+
+    private databaseManager db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        masterQuestionList.loadQuestions();
-        scoreboard.load();
+        db = new databaseManager(this);
+
+
+        masterQuestionList.loadQuestions(db);
+        scoreboard.load(db);
 
 
 

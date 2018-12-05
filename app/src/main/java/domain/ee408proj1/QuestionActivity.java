@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -40,7 +41,7 @@ public class QuestionActivity extends AppCompatActivity {
         action = (Button)findViewById(R.id.action);
         switchButton = 0;
 
-        myQuiz = new quiz (4);
+        myQuiz = new quiz (10);
 
         action.setText("Submit");
         showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + (myQuiz.getCurrentIndex() + 1));
@@ -69,7 +70,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                myQuiz.checkAnswer(index);
 
-               //rgColor();
+               rgColor();
                showScore.setText("Score: \n" + myQuiz.getNumRight() + "/" + (myQuiz.getCurrentIndex() + 1));
                switchButton = 1;
                action.setText("Next");
@@ -111,30 +112,34 @@ public class QuestionActivity extends AppCompatActivity {
        c4.setBackgroundColor(norm);
     }
 
-/*    public void rgColor() {  //highlights correct answer green, wrong red
+    public void rgColor() {  //highlights correct answer green, wrong red
+        int ch1 = 0;
+        int ch2 = 1;
+        int ch3 = 2;
+        int ch4 = 3;
         int green = Color.parseColor("#33ff33");
         int red = Color.parseColor("#ff6666");
-        if(c1.getText().equals())
+        if(myQuiz.getCurrent().check(ch1))
             c1.setBackgroundColor(green);
         else
             c1.setBackgroundColor(red);
 
-        if(c2.getText().equals())
+        if(myQuiz.getCurrent().check(ch2))
             c2.setBackgroundColor(green);
         else
             c2.setBackgroundColor(red);
 
-        if(c3.getText().equals())
+        if(myQuiz.getCurrent().check(ch3))
             c3.setBackgroundColor(green);
         else
             c3.setBackgroundColor(red);
 
-        if(c4.getText().equals())
+        if(myQuiz.getCurrent().check(ch4))
             c4.setBackgroundColor(green);
         else
             c4.setBackgroundColor(red);
 
-    }*/
+    }
 
 
     public void quitButton( View v ) {
