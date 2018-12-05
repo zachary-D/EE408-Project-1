@@ -1,6 +1,7 @@
 package domain.ee408proj1;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 public class QuestionActivity extends AppCompatActivity {
 
+    private MediaPlayer mp;
     private TextView question, showScore;
     private RadioGroup radioGroup;
     private RadioButton c1, c2, c3, c4;
@@ -49,6 +51,10 @@ public class QuestionActivity extends AppCompatActivity {
         theScore = 0;
         addQuestion();
         normColor();
+
+        // starts the music
+        mp = MediaPlayer.create(this, R.raw.music);
+        mp.start();
     }
 
     public void actionButton(View v) {
