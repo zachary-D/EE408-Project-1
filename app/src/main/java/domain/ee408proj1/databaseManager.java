@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class databaseManager extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "appDB";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     //DB table headers for the 'questions' table
     private static final String TABLE_QU = "questions";
@@ -52,11 +52,11 @@ public class databaseManager extends SQLiteOpenHelper {
 
         //Add the default questions
         db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 1st Planet from the Sun?', 'Mercury', 'Neptune', 'Earth', 'Jupiter')");
-        db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 2nd Planet from the Sun', 'Venus', 'Mercury', 'Uranus', 'Neptune')");
+        db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 2nd Planet from the Sun?', 'Venus', 'Mercury', 'Uranus', 'Neptune')");
         db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 3rd Planet from the Sun?', 'Earth', 'Saturn', 'Venus', 'Neptune')");
         db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 4th Planet from the Sun?', 'Mars', 'Venus', 'Uranus', 'Saturn')");
-        db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 5th Planet from the Sun', 'Jupiter', 'Mars', 'Uranus', 'Saturn')");
-        db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 6th Planet from the Sun', 'Saturn', 'Neptune', 'Earth', 'Jupiter')");
+        db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 5th Planet from the Sun?', 'Jupiter', 'Mars', 'Uranus', 'Saturn')");
+        db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 6th Planet from the Sun?', 'Saturn', 'Neptune', 'Earth', 'Jupiter')");
         db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 7th Planet from the Sun?', 'Uranus', 'Saturn', 'Venus', 'Mars')");
         db.execSQL("insert into " + TABLE_QU + " values(null, 'What is the 8th Planet from the Sun?', 'Neptune', 'Mercury', 'Jupiter', 'Earth')");
         db.execSQL("insert into " + TABLE_QU + " values(null, 'How many known planets are there in the Solar System?', '8', '5', '7', '11')");
