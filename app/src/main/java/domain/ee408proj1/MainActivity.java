@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
         masterQuestionList.loadQuestions(db);
         scoreboard.load(db);
 
-
-
-
         startQuiz = (Button) findViewById(R.id.startQuiz);
 
         View.OnClickListener sQListen = new View.OnClickListener()
@@ -71,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateScoreBoard() {
-        Score.setText("Score: " + scoreboard.getLastScore().correct + "/" + scoreboard.getLastScore().total);
+        Score.setText("Score: " + QuestionActivity.theScore + "/10");
     }
 
 
