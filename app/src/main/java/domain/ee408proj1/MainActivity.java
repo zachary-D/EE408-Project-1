@@ -59,16 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
         updateScoreBoard();
 
-<<<<<<< Updated upstream
-
-
-
-
-=======
         // starts the music
         mp = MediaPlayer.create(this, R.raw.music);
         mp.start();
->>>>>>> Stashed changes
 
         }
 
