@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MediaPlayer mp;
     private TextView Description;
     private TextView Score;
     private Button startQuiz;
@@ -53,10 +54,16 @@ public class MainActivity extends AppCompatActivity {
 
         updateScoreBoard();
 
+<<<<<<< Updated upstream
 
 
 
 
+=======
+        // starts the music
+        mp = MediaPlayer.create(this, R.raw.music);
+        mp.start();
+>>>>>>> Stashed changes
 
         }
 
@@ -68,5 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public void updateScoreBoard() {
         Score.setText("Score: " + scoreboard.getLastScore().correct + "/" + scoreboard.getLastScore().total);
     }
+
+
 }
 
