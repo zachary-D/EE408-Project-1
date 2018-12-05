@@ -12,7 +12,7 @@ public class quiz
 		//TODO: Add checking to make sure that 'numQuestions' isn't greater that the maximum number of questions in masterQuestionList.java
 		totalQuestions = numQuestions;
 
-		getFromMaster(totalQuestions);
+		getFromMaster(20);
 
 		numCorrect = 0;
 		currentQuestion = 0;

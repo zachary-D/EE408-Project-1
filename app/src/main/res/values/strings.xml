@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">EE408Proj1</string>
+    <string name="app_name">Solar System Quiz</string>
     <string name="title_activity_question">QuestionActivity</string>
 </resources>
