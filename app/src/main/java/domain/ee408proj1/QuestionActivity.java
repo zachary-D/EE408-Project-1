@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class QuestionActivity extends AppCompatActivity {
 
-    private MediaPlayer mp;
+
     private TextView question, showScore;
     private RadioGroup radioGroup;
     private RadioButton c1, c2, c3, c4;
@@ -52,9 +52,7 @@ public class QuestionActivity extends AppCompatActivity {
         addQuestion();
         normColor();
 
-        // starts the music
-        mp = MediaPlayer.create(this, R.raw.music);
-        mp.start();
+
     }
 
     public void actionButton(View v) {
