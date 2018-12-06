@@ -15,7 +15,12 @@
             android:id="@+id/qBox"
             android:layout_width="fill_parent"
             android:layout_height="130dp"
-            android:background="#ffffff" />
+            android:background="#ffffff"
+            android:textSize="12pt"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:textColor="#000000"
+            android:gravity="center"/>
 
         <View
             android:id="@+id/redLine"
@@ -37,7 +42,10 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:buttonTint="#000000"
+                android:textColor="#000000"
+                android:textSize="10pt"/>
 
             <RadioButton
                 android:id="@+id/choice2"
@@ -45,7 +53,10 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:buttonTint="#000000"
+                android:textColor="#000000"
+                android:textSize="10pt"/>
 
             <RadioButton
                 android:id="@+id/choice3"
@@ -53,7 +64,10 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:buttonTint="#000000"
+                android:textColor="#000000"
+                android:textSize="10pt"/>
 
             <RadioButton
                 android:id="@+id/choice4"
@@ -61,7 +75,10 @@
                 android:layout_height="55dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:buttonTint="#000000"
+                android:textColor="#000000"
+                android:textSize="10pt"/>
 
     </RadioGroup>
 
@@ -96,6 +113,8 @@
             android:layout_marginTop="17dp"
             android:layout_toRightOf="@id/action"
             android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="8pt"
             android:background="#f4b642" />
 
     </RelativeLayout>
